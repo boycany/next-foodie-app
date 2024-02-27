@@ -6,6 +6,9 @@ import { Suspense } from "react";
 
 /** We can do the async function in the server component. */
 async function Meals() {
+    /** The page is pregenerated and cached by next.js, so it won't execute again after the first render */
+    console.log("fetching meals...");
+
     //We use the server component as default, so we won't need to use useEffect to fetch data
     const meals = await getMeals();
     return <MealsGrid meals={meals} />;
