@@ -11,6 +11,7 @@ async function Meals() {
 
     //We use the server component as default, so we won't need to use useEffect to fetch data
     const meals = await getMeals();
+    // console.log("meals :>> ", meals);
     return <MealsGrid meals={meals} />;
 }
 

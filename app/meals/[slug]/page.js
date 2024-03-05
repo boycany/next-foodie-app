@@ -13,11 +13,15 @@ export default function MealDetailsPage({ params }) {
         meal.instructions = meal.instructions.replace(/\n/g, "<br />");
     }
 
+    const imageUrl =
+        "https://yhc-nextjs-demo-image.s3.ap-northeast-2.amazonaws.com/" +
+        meal.image;
+
     return (
         <>
             <header className={styles.header}>
                 <div className={styles.image}>
-                    <Image src={meal.image} alt={meal.title} fill />
+                    <Image src={imageUrl} alt={meal.title} fill />
                 </div>
                 <div className={styles.headerText}>
                     <h1>{meal.title}</h1>
