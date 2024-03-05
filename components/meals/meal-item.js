@@ -4,6 +4,10 @@ import Image from "next/image";
 import styles from "./meal-item.module.css";
 
 export default function MealItem({ title, slug, image, summary, creator }) {
+    if (!image) {
+        return;
+    }
+
     const imgUrl =
         "https://yhc-nextjs-demo-image.s3.ap-northeast-2.amazonaws.com/" +
         image;
